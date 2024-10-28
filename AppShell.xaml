@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+	x:Class="tessting.AppShell"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:view="clr-namespace:tessting.Views"
+	xmlns:local="clr-namespace:tessting"
+    Shell.FlyoutBehavior="{OnIdiom Desktop=Locked,
+                                 Phone=Disabled}">
+
+  
+
+    <!--  Flyout for Desktop  -->
+    <FlyoutItem>
+        <ShellContent
+          ContentTemplate="{DataTemplate view:MainPage}"
+          Route="MainPage" />
+    </FlyoutItem>
+
+    <FlyoutItem>
+        <ShellContent
+          ContentTemplate="{DataTemplate view:CollectionPage}"
+          Route="CollectionPage" />
+    </FlyoutItem>
+
+
+    <!--  TabBar for Phone  -->
+    <TabBar>
+        <Tab>
+            <ShellContent
+              ContentTemplate="{DataTemplate view:MainPage}"
+              Route="MainPage"
+              Shell.NavBarIsVisible="False" />
+        </Tab>
+        <Tab>
+            <ShellContent
+              ContentTemplate="{DataTemplate view:CollectionPage}"
+              Route="CollectionPage" />
+        </Tab>
+    </TabBar>
+
+</Shell>
